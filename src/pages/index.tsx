@@ -5,14 +5,8 @@ import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import { decodeKeyJson } from '../utils/decodeKeyJson';
 
-// export async function getServerSideProps() {
-//   decodeKeyJson();
-//   return {
-//     props: {},
-//   };
-// }
+
 
 export default function Home() {
 
