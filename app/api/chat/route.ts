@@ -1,12 +1,19 @@
 import { CoreMessage, streamText } from 'ai';
 
 import { createVertex } from '@ai-sdk/google-vertex';
+if (!process.env.GOOGLE_SERVICE_KEY) {
+    throw new Error("GOOGLE_SERVICE_KEY environment variable is not set");
+}
+
+const credential = JSON.parse(
+    Buffer.from(process.env.GOOGLE_SERVICE_KEY, "base64").toString()
+);
 
 const vertex = createVertex({
     project: 'pacific-vault-426816-s6',
     location: 'us-central1',
     googleAuthOptions: {
-        keyFilename: 'key.json',
+        credentials: credential,
     }
 });
 
