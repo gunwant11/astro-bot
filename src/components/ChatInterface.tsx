@@ -25,7 +25,7 @@ export default function ChatInterface() {
             setLoading(false);
             setInput('');
             // scroll to the bottom of the chat
-        } catch (e) {
+        } catch (e: any) {
             setLoading(false);
             console.log(e.message);
         }

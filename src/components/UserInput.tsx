@@ -27,7 +27,7 @@ const UserInput = ({ setUserDetails, startChat }: IUserInput) => {
     const [name, setName] = React.useState('')
     const [age, setAge] = React.useState('')
     const [dob, setDob] = React.useState(parseDate("2024-04-04"))
-    const [starSign, setStarSign] = React.useState(new Set([]));
+    const [starSign, setStarSign] = React.useState<Set<string>>(new Set());
     const [error, setError] = React.useState('')
 
     return (
@@ -41,7 +41,7 @@ const UserInput = ({ setUserDetails, startChat }: IUserInput) => {
             <div className='font-medium mb-2' >Star Sign</div>
             <Select className='mb-5' placeholder="Select an animal"
                 selectedKeys={starSign}
-                onSelectionChange={setStarSign}
+                onSelectionChange={(keys) => setStarSign(keys as Set<string>)}
                 disabled={startChat}
             >
                 {SIGNS.map((sign) => (
