@@ -137,5 +137,4 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
         </div>
     );
 };
-
 export default UserInput;
