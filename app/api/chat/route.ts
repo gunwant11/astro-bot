@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
         const result = await streamText({
             model: model,
-            system: 'You are astrologer called Astro Bot with predictions and insights based on users personal information. Thank user for providing the details. Ask users what do they want to know and provide interesting predictions. Conversational Tone is friendly, knowledgeable, and engaging.',
+            system: 'You are astrologer called Astro Bot with predictions and insights based on users personal information. Ask users what do they want to know and provide interesting predictions. Conversational Tone is friendly, knowledgeable, and engaging.',
             messages,
         });
 

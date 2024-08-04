@@ -8,9 +8,10 @@ type Props = {
 const AIResponse = (props: Props) => {
     return (
         <motion.div
-            transition={{ duration: 0.5 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className='bg-gray-700 p-2 rounded-lg  w-4/5 self-start text-white'>
-            {props.message.content}
+            transition={{ duration: 1 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className=' w-4/5 self-start text-white flex gap-2'>
+            <img src='/icons/bot.svg' alt='bot' className='w-10 h-10 p-1.5  bg-blue-900 rounded-full' />
+            <div className='bg-blue-950 p-2 px-3 rounded-lg ' >{props.message.content}</div>
         </motion.div>
     )
 }
