@@ -5,7 +5,7 @@
 Astro Bot is a conversational interface designed to provide users with astrological predictions and insights based on their personal information. The bot collects initial user details and delivers customized astrology content according to user queries.
 
 <!-- link -->
-[Visit Astro Bot](https://astro-bot.vercel.app/)
+[Visit Astro Bot](https://astro-bot-one.vercel.app/)
 
 ## Key Features
 
