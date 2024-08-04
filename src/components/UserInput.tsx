@@ -1,5 +1,9 @@
-import { Button, DatePicker, Input, Select, SelectItem } from '@nextui-org/react'
+
 import React from 'react'
+import { Select, SelectSection, SelectItem } from "@nextui-org/select";
+import { Input } from "@nextui-org/input";
+import { Button } from "@nextui-org/button";
+import { DatePicker } from "@nextui-org/date-picker";
 import { parseDate, } from "@internationalized/date";
 interface IUserInput {
     setUserDetails: (name: string, age: number, dob: string, starSign: string) => void

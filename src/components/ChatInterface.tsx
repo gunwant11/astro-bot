@@ -1,4 +1,5 @@
-import { Button, Input, Spinner, Textarea } from '@nextui-org/react';
+import { Textarea } from "@nextui-org/input";
+import { Button } from "@nextui-org/button";
 import { useChat } from 'ai/react';
 import { useEffect, useRef, useState } from 'react';
 import HumanResponse from './HumanResponse';
@@ -6,6 +7,7 @@ import AIResponse from './AIResponse';
 import { Message } from 'ai'
 import UserInput from './UserInput';
 import { motion, useAnimate } from 'framer-motion';
+import { Spinner } from "@nextui-org/spinner";
 
 
 export default function ChatInterface() {
