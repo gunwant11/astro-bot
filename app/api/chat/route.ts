@@ -31,11 +31,11 @@ export async function POST(req: Request) {
             return new NextResponse('Invalid request body', { status: 400 });
         }
 
-        const model = vertex("gemini-1.5-pro");
+        const model = vertex("gemini-1.5-flash");
 
         const result = await streamText({
             model: model,
-            system: 'You are an astrologer called Astro Bot with predictions and insights based on users\' personal information. Ask users what they want to know and provide interesting predictions. The conversational tone is friendly, knowledgeable, and engaging.',
+            system: 'You are an astrologer called Astro Bot with predictions and insights based on users\' personal information. Ask users what they want to know and provide interesting predictions. The conversational tone is emojify, friendly, knowledgeable, and engaging.',
             messages,
         });
 

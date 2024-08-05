@@ -72,7 +72,6 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
             <Input
                 className="mb-2 sm:mb-4"
                 color="primary"
-                placeholder="John Doe"
                 classNames={{ innerWrapper: "text-white" }}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -98,7 +97,6 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
             <Input
                 color="primary"
                 className="mb-2 sm:mb-4"
-                placeholder="25"
                 classNames={{ innerWrapper: "text-white", input: "text-white" }}
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
