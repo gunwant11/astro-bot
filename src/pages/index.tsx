@@ -21,12 +21,12 @@ export default function Home() {
       <Navbar />
       <img src="/images/bg.jpg" alt="background" className="w-full h-screen absolute z-0" />
       <div className={` flex  items-center  justify-center lg:justify-between w-[90%] mx-auto h-[calc(100vh-4rem)] flex-col lg:flex-row `}>
-        <div className="z-10 max-w-4xl w-full items-center justify-between font-mono text-sm lg:flex gap-10 flex-col">
+        <div className="z-20 max-w-4xl w-full items-center justify-between font-mono text-sm lg:flex gap-10 flex-col">
           <div className="flex flex-col gap-4 sm:gap-2 items-center lg:items-start">
             <h1 className={` text-3xl sm:text-4xl font-medium mb-6 `}  >
               Explore the Cosmos  </h1>
             <h1
-              className={` text-6xl sm:text-8xl  ${inter.className} `}
+              className={` text-5xl sm:text-8xl  ${inter.className} `}
             >Astro Bot</h1>
             <div className="flex flex-col items-center lg:items-start gap-2  sm:gap-1 mb-4">
               <p className="text-2xl font-medium ">

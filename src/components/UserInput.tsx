@@ -67,10 +67,10 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
     }, [name, age, dob, starSign, setUserDetails]);
 
     return (
-        <div className="px-6 py-6 rounded-xl w-[500px] bg-blue-950">
+        <div className="sm:px-6 sm:py-6 rounded-xl w-[280px]  p-4 sm:w-[500px] bg-blue-950">
             <div className="font-medium mb-2 text-sm">Name</div>
             <Input
-                className="mb-4"
+                className="mb-2 sm:mb-4"
                 style={{ backgroundColor: "white" }}
                 color="primary"
                 placeholder="John Doe"
@@ -88,7 +88,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
                     input: "text-white",
                     inputWrapper: "text-white",
                 }}
-                className="mb-4"
+                className="mb-2 sm:mb-4"
                 value={dob}
                 showMonthAndYearPickers
                 onChange={handleDateChange}
@@ -98,7 +98,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
             <div className="font-medium mb-2 text-sm">Age</div>
             <Input
                 color="primary"
-                className="mb-4"
+                className="mb-2 sm:mb-4"
                 placeholder="25"
                 classNames={{ innerWrapper: "text-white", input: "text-white" }}
                 value={age}
@@ -113,7 +113,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
             <Select
                 color="primary"
                 classNames={{ innerWrapper: "text-white", value: "text-white" }}
-                className="mb-4"
+                className="mb-2 sm:mb-4"
                 placeholder="Select a Star Sign"
                 selectedKeys={starSign}
                 onSelectionChange={(keys) => setStarSign(keys as Set<string>)}
@@ -129,7 +129,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
             <div className="text-red-500 text-xs mb-2">{error}</div>
             <Button
                 disabled={startChat}
-                className="bg-blue-900 text-white font-bold py-3 px-8 rounded-xl"
+                className="bg-blue-900 text-white font-bold text-sm sm:text-base sm:py-3 sm:px-8 rounded-xl"
                 onClick={handleSubmit}
             >
                 Submit
