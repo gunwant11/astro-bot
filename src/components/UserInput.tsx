@@ -68,10 +68,9 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
 
     return (
         <div className="sm:px-6 sm:py-6 rounded-xl w-[280px]  p-4 sm:w-[500px] bg-blue-950">
-            <div className="font-medium mb-2 text-sm">Name</div>
+            <div className="font-bold mb-2 text-sm">Name</div>
             <Input
                 className="mb-2 sm:mb-4"
-                style={{ backgroundColor: "white" }}
                 color="primary"
                 placeholder="John Doe"
                 classNames={{ innerWrapper: "text-white" }}
@@ -80,7 +79,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
                 disabled={startChat}
             />
 
-            <div className="font-medium mb-2 text-sm">Date of Birth</div>
+            <div className="font-bold mb-2 text-sm">Date of Birth</div>
             <DatePicker
                 color="primary"
                 classNames={{
@@ -95,7 +94,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
                 isDisabled={startChat}
             />
 
-            <div className="font-medium mb-2 text-sm">Age</div>
+            <div className="font-bold mb-2 text-sm">Age</div>
             <Input
                 color="primary"
                 className="mb-2 sm:mb-4"
@@ -109,7 +108,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
                 max={100}
             />
 
-            <div className="font-medium mb-2 text-sm">Star Sign</div>
+            <div className="font-bold mb-2 text-sm">Star Sign</div>
             <Select
                 color="primary"
                 classNames={{ innerWrapper: "text-white", value: "text-white" }}
@@ -129,7 +128,7 @@ const UserInput: React.FC<IUserInput> = ({ setUserDetails, startChat }) => {
             <div className="text-red-500 text-xs mb-2">{error}</div>
             <Button
                 disabled={startChat}
-                className="bg-blue-900 text-white font-bold text-sm sm:text-base sm:py-3 sm:px-8 rounded-xl"
+                className="bg-blue-900 text-white font-bold text-sm  sm:py-3 sm:px-8 rounded-xl"
                 onClick={handleSubmit}
             >
                 Submit
