@@ -13,7 +13,7 @@ import { SendHorizontal, Trash2 } from "lucide-react";
 const ChatInterface: React.FC = () => {
     const { messages, input, setInput, append } = useChat();
     const [loading, setLoading] = useState(false);
-    const [startChat, setStartChat] = useState(false);
+    const [startChat, setStartChat] = useState(true);
     const [submitDetails, setSubmitDetails] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const [scope, animate] = useAnimate();
@@ -63,7 +63,7 @@ const ChatInterface: React.FC = () => {
     return (
         <div className="flex flex-col px-2 gap-4 justify-between h-full">
             <div className="flex flex-col gap-4 sm:mt-4 flex-1 scroll-bar-hide overflow-y-scroll pb-4" ref={containerRef}>
-                <motion.div
+                {/* <motion.div
                     initial={{ y: "30%", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
@@ -88,8 +88,14 @@ const ChatInterface: React.FC = () => {
                             } as Message}
                         />
                     )}
-                </motion.div>
-                {messages.slice(1).map((message, index) =>
+                </motion.div> */}
+                <AIResponse
+                    message={{
+                        content: "Hey there! 👋 I'm Astro Bot, your friendly guide to the cosmos. Before we start can you provide me your details",
+                        role: "assistant",
+                    } as Message}
+                />
+                {messages.map((message, index) =>
                     message.role === "user" ? (
                         <HumanResponse key={index} message={message} />
                     ) : (
@@ -100,7 +106,7 @@ const ChatInterface: React.FC = () => {
             <div className="mt-2 flex flex-col bg-zinc-900 p-4 gap-3 mb-2 sm:mb-4 rounded-xl overflow-hidden">
                 <div className="flex gap-3">
                     <Textarea
-                        disabled={loading || !startChat}
+                        disabled={loading}
                         value={input}
                         onChange={(event) => setInput(event.target.value)}
                         onKeyDown={async (event) => {

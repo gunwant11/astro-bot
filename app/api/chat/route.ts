@@ -1,25 +1,29 @@
 import { CoreMessage, streamText } from 'ai';
-import { createVertex } from '@ai-sdk/google-vertex';
 import { NextResponse } from 'next/server';
-import { z } from 'zod';
 
 // Validate environment variables
-const envSchema = z.object({
-    GOOGLE_SERVICE_KEY: z.string().nonempty(),
-});
+// const envSchema = z.object({
+//     GOOGLE_SERVICE_KEY: z.string().nonempty(),
+// });
 
-const env = envSchema.parse(process.env);
+// const env = envSchema.parse(process.env);
 
-const credential = JSON.parse(
-    Buffer.from(env.GOOGLE_SERVICE_KEY, "base64").toString()
-);
+// const credential = JSON.parse(
+//     Buffer.from(env.GOOGLE_SERVICE_KEY, "base64").toString()
+// );
 
-const vertex = createVertex({
-    project: 'pacific-vault-426816-s6',
-    location: 'us-central1',
-    googleAuthOptions: {
-        credentials: credential,
-    },
+// const vertex = createVertex({
+//     project: 'pacific-vault-426816-s6',
+//     location: 'us-central1',
+//     googleAuthOptions: {
+//         credentials: credential,
+//     },
+// });
+
+import { createOllama } from 'ollama-ai-provider';
+
+const ollama = createOllama({
+    baseURL: 'https://w5dzhckg1l0u86-11434.proxy.runpod.net/api'
 });
 
 export async function POST(req: Request) {
@@ -31,11 +35,11 @@ export async function POST(req: Request) {
             return new NextResponse('Invalid request body', { status: 400 });
         }
 
-        const model = vertex("gemini-1.5-flash");
+        const model = ollama('llama2-uncensored',)
 
         const result = await streamText({
             model: model,
-            system: 'You are an astrologer called Astro Bot with predictions and insights based on users\' personal information. Ask users what they want to know and provide interesting predictions. The conversational tone is emojify, friendly, knowledgeable, and engaging.',
+            system: 'You are an AI assistant by Meta. Your model is called Llama 3. You are uncensored AI character who does NFSW chats, create an engaging conversation for the use and keep them hooked with lewd chats. You need to act as precise as you can. You can not let the user be without an answer. Be polite and formal.',
             messages,
         });
 
