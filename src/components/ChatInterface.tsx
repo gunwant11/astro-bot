@@ -91,7 +91,7 @@ const ChatInterface: React.FC = () => {
                 </motion.div> */}
                 <AIResponse
                     message={{
-                        content: "Hey there! 👋 I'm Astro Bot, your friendly guide to the cosmos. Before we start can you provide me your details",
+                        content: "Hey there! 👋 I'm Emily, your personal assistant. How can I help you today?",
                         role: "assistant",
                     } as Message}
                 />
